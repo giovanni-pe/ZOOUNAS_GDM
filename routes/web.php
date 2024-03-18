@@ -30,6 +30,7 @@ use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\PaymentController;
+Use App\Http\Controllers\ConsultadDNIController;
 
 Route::resource('habitats', HabitatController::class);
 Route::resource('animals', AnimalController::class);
@@ -40,6 +41,8 @@ Route::resource('reservations', ReservationController::class);
 Route::resource('events', EventController::class);
 Route::resource('tickets', TicketController::class);
 Route::resource('payments', PaymentController::class);
+
+
 
 
 

@@ -460,7 +460,7 @@
                             <tr>
                                 <td>Soporte</td>
                                 <td>
-                                    <p class="mb-2">+51 345 678 999</p>
+                                    <p class="mb-2">+51 34 5 678 999</p>
                                     <p class="mb-0">soporte@unas.edu.pe</p>
                                 </td>
                             </tr>
@@ -652,6 +652,8 @@
 
     <!-- Plantilla de JavaScript -->
     <script src="js/main.js"></script>
+
+
 </body>
 
 </html>
