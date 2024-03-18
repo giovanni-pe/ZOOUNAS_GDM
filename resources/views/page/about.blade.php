@@ -1,4 +1,5 @@
-
+@extends('layouts.zoofrontend')
+@section('content')
     <!-- Page Header Start -->
     <div class="container-fluid header-bg py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">
@@ -31,7 +32,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="img-border">
-                        <img class="img-fluid" src="img/about.jpg" alt="">
+                        <img class="img-fluid" src="{{ asset('img/about.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -76,7 +77,7 @@
             <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">¡Nuestros Clientes Opinan!</h1>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;">
+                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="{{ asset('img/testimonial-1.jpg') }}" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
                         <p>¡ZooUNAS ofreció una experiencia increíble! Me encantó la variedad de animales y el ambiente natural.</p>
                         <h5 class="mb-1">Nombre del Cliente</h5>
@@ -84,7 +85,7 @@
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;">
+                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="{{ asset('img/testimonial-2.jpg') }}" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
                         <p>¡Una visita a ZooUNAS es imprescindible para cualquier amante de la naturaleza! Lo recomiendo encarecidamente.</p>
                         <h5 class="mb-1">Nombre del Cliente</h5>
@@ -92,7 +93,7 @@
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-3.jpg" style="width: 100px; height: 100px;">
+                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="{{ asset('img/testimonial-2.jpg') }}" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
                         <p>¡Gracias a ZooUNAS por una experiencia maravillosa! Aprendí mucho sobre la vida salvaje mientras me divertía.</p>
                         <h5 class="mb-1">Nombre del Cliente</h5>
