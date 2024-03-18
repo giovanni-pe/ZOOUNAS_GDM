@@ -9,9 +9,13 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('customer_document_type');
+
+           
+            $table->string('customer_full_name');
             $table->decimal('price', 8, 2);
             $table->integer('quantity_available');
+
             $table->timestamps();
         });
     }

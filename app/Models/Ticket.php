@@ -24,6 +24,7 @@ class Ticket extends Model
 		'name' => 'required',
 		'price' => 'required',
 		'quantity_available' => 'required',
+    
     ];
 
     protected $perPage = 20;

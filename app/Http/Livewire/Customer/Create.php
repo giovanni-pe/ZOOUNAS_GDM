@@ -20,11 +20,21 @@ class Create extends Component
         $this->validate([
             'customer_document_type' => 'required',
             'customer_document_number' => 'required',
+            'customer_full_name' => 'required',
         ]);
+
+        // Dividir el nombre completo en nombres, apellido paterno y apellido materno
+        $names = explode(' ', $this->customer_full_name);
+        $first_name = $names[0]; // Primer nombre
+        $last_name1 = $names[1]; // Apellido paterno
+        $last_name2 = $names[2] ?? ''; // Apellido materno, si existe
 
         $customer = Ticket::create([
             'customer_document_type' => $this->customer_document_type,
             'customer_document_number' => $this->customer_document_number,
+            'first_name' => $first_name,
+            'last_name1' => $last_name1,
+            'last_name2' => $last_name2,
         ]);
 
         $this->resetInput();
@@ -45,6 +55,7 @@ class Create extends Component
         $this->validate([
             'customer_document_type' => 'required',
             'customer_document_number' => 'required',
+            
         ]);
 
         $token = config('services.apisunat.token');

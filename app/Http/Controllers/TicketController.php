@@ -43,13 +43,34 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Ticket::$rules);
+        $request->validate([
+            'customer_full_name' => 'required',
+            'customer_document_type' => 'required',
+            'price' => 'required|numeric', // Validar que el precio sea obligatorio y numérico
+            'quantity_available' => 'required|integer', // Validar que la cantidad disponible sea obligatoria y un entero
+        ]);
 
-        $ticket = Ticket::create($request->all());
+        // Dividir el nombre completo en nombres, apellido paterno y apellido materno
+        $names = explode(' ', $request->customer_full_name);
+        $first_name = $names[0]; // Primer nombre
+        $last_name1 = $names[1]; // Apellido paterno
+        $last_name2 = $names[2] ?? ''; // Apellido materno, si existe
 
-        return redirect()->route('tickets.index')
-            ->with('success', 'Ticket created successfully.');
+        // Crear un nuevo ticket con los datos recibidos
+        $ticket = Ticket::create([
+            'customer_full_name' => $request->customer_full_name,
+            'first_name' => $first_name,
+            'last_name1' => $last_name1,
+            'last_name2' => $last_name2,
+            'customer_document_type' => $request->customer_document_type,
+            'price' => $request->price,
+            'quantity_available' => $request->quantity_available,
+        ]);
+
+        return redirect()->route('tickets.index')->with('success', 'Ticket created successfully.');
     }
+    
+    
 
     /**
      * Display the specified resource.

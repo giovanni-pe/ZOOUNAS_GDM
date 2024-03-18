@@ -11,11 +11,9 @@
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
                             <span id="card_title">
                                 {{ __('Ticket') }}
                             </span>
-
                              <div class="float-right">
                                 <a href="{{ route('tickets.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
@@ -35,11 +33,9 @@
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
-                                        
-										<th>Name</th>
+										<th>Nombres</th>
 										<th>Price</th>
 										<th>Quantity Available</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -47,11 +43,9 @@
                                     @foreach ($tickets as $ticket)
                                         <tr>
                                             <td>{{ ++$i }}</td>
-                                            
-											<td>{{ $ticket->name }}</td>
+											<td>{{ $ticket->customer_full_name }}</td>
 											<td>{{ $ticket->price }}</td>
 											<td>{{ $ticket->quantity_available }}</td>
-
                                             <td>
                                                 <form action="{{ route('tickets.destroy',$ticket->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('tickets.show',$ticket->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
