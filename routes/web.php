@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Livewire\Customer\Create;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +42,7 @@ Route::resource('events', EventController::class);
 Route::resource('tickets', TicketController::class);
 Route::resource('payments', PaymentController::class);
 
+Route::post('/guardar-cliente', [Create::class, 'registerCustomer']);
 
 
 

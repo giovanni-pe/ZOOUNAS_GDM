@@ -9,14 +9,19 @@ class CreateTicketsTable extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
-
             $table->decimal('price', 8, 2);
             $table->integer('quantity_available');
-            $table->string('customer_document_type');
-            $table->string('customer_document_number');
-            $table->string('customer_full_name');
+            $table->unsignedBigInteger('customer_id'); // Debes definir la columna para la clave foránea
+        
+            // Definir la relación de clave externa
+            $table->foreign('customer_id')
+                  ->references('id')
+                  ->on('api_customers')
+                  ->onDelete('cascade'); // Esto borrará los tickets si se borra el cliente asociado
+        
             $table->timestamps();
         });
+        
     }
 
     public function down()

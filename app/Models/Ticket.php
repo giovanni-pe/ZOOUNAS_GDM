@@ -37,6 +37,11 @@ class Ticket extends Model
     protected $fillable = ['name','price','quantity_available' ,
      'customer_document_type', 'customer_document_number', 'customer_full_name'];
 
+     public function Customer()
+     {
+         return $this->belongsTo(api_customer::class , 'customer_document_number', 'customer_full_name');
+     }
+
 
 
 }

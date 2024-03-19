@@ -1,8 +1,23 @@
 <div class="box box-info padding-1">
-    <div class="box-body">
+    <div class="form-group col-md-6">
         <livewire:customer.create :key="$refreshComponent" />
+        <button type="button" class="btn btn-success" id="guardarCliente">Guardar Cliente</button>
+    </div>
+
+    <div class="box-body">
+        <!-- Botón independiente para guardar cliente -->
        
-            
+        
+        <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Seleccionar Cliente</label>
+            <select class="form-select" id="inputGroupSelect01" name="customer_id">
+                <option selected>Seleccionar cliente...</option>
+                @foreach($clientes as $id => $cliente)
+                    <option value="{{ $id }}">{{ $cliente }}</option>
+                @endforeach
+            </select>
+        </div>
+        
         <div class="form-group col-md-2">
             {{ Form::label('price') }}
             {{ Form::text('price', $ticket->price, ['class' => 'form-control' . ($errors->has('price') ? ' is-invalid' : ''), 'placeholder' => 'Price']) }}
@@ -14,10 +29,11 @@
             {!! $errors->first('quantity_available', '<div class="invalid-feedback">:message</div>') !!}
         </div>
     </div>
+    
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <!-- Botón adicional para guardar cliente -->
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+

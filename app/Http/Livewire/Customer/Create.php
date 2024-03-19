@@ -19,10 +19,7 @@ class Create extends Component
 
     public function registerCustomer()
     {
-        $this->validate([
-            'price' => 'required|numeric',
-            'quantity_available' => 'required|integer',
-        ]);
+
 
         // Obtener los datos del cliente de la API
         $customerData = $this->searchCustomer();
@@ -32,17 +29,11 @@ class Create extends Component
             'customer_document_type' => $this->customer_document_type,
             'customer_document_number' => $this->customer_document_number,
             'customer_full_name' => $this->customer_full_name,
+            
         ]);
 
-        // Crear un nuevo ticket con los datos recibidos
-        $ticket = Ticket::create([
-            'price' => $this->price,
-            'quantity_available' => $this->quantity_available,
-            // Asignar los datos del cliente al ticket
-            'customer_document_type' => $this->customer_document_type,
-            'customer_document_number' => $this->customer_document_number,
-            'customer_full_name' => $this->customer_full_name,
-        ]);
+        $this->emit('clienteGuardado');
+
 
         return redirect()->route('tickets.index')->with('success', 'Ticket created successfully.');
     }

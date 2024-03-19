@@ -33,7 +33,7 @@
             </div>
         </div>
 
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-6 mb-3">
             <label for="">Nombres</label>
             <input type="text" wire:model="customer_full_name"
                 class="form-control @error('customer_full_name') is-invalid @enderror">
@@ -43,5 +43,6 @@
                 </span>
             @enderror
         </div>
+        
     </div>
 </div>

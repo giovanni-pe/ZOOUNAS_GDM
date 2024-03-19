@@ -2,75 +2,45 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\api_customer;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 
-/**
- * Class TicketController
- * @package App\Http\Controllers
- */
 class TicketController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         $tickets = Ticket::paginate();
 
-        return view('ticket.index', compact('tickets'))
+        return view('ticket.index', compact('tickets' ,'id'))
             ->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $ticket = new Ticket();
-        return view('ticket.create', compact('ticket'));
+        $clientes = api_customer::pluck('customer_full_name'); // 
+        return view('ticket.create', compact('ticket','clientes'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         $request->validate([
             'price' => 'required|numeric',
             'quantity_available' => 'required|integer',
-            'customer_document_type' => 'required',
-            'customer_document_number' => 'required',
-            'customer_full_name' => 'required',
+            'customer_id' => 'required|exists:api_customers,id', // Asegúrate de que el cliente exista en la tabla de clientes
         ]);
-
-        // Crear un nuevo ticket con los datos recibidos
+    
         $ticket = Ticket::create([
             'price' => $request->price,
             'quantity_available' => $request->quantity_available,
-            'customer_document_type' => $request->customer_document_type,
-            'customer_document_number' => $request->customer_document_number,
-            'customer_full_name' => $request->customer_full_name,
+            'customer_id' => $request->customer_id, // Asigna el ID del cliente
         ]);
-
+    
         return redirect()->route('tickets.index')->with('success', 'Ticket created successfully.');
     }
+    
 
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $ticket = Ticket::find($id);
@@ -78,12 +48,6 @@ class TicketController extends Controller
         return view('ticket.show', compact('ticket'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $ticket = Ticket::find($id);
@@ -91,33 +55,28 @@ class TicketController extends Controller
         return view('ticket.edit', compact('ticket'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  Ticket $ticket
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Ticket $ticket)
     {
-        request()->validate(Ticket::$rules);
+        $request->validate([
+            'price' => 'required|numeric',
+            'quantity_available' => 'required|integer',
+
+        ]);
 
         $ticket->update($request->all());
 
-        return redirect()->route('tickets.index')
-            ->with('success', 'Ticket updated successfully');
+        return redirect()->route('tickets.index')->with('success', 'Ticket updated successfully');
     }
 
-    /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
-     */
     public function destroy($id)
     {
-        $ticket = Ticket::find($id)->delete();
+        Ticket::find($id)->delete();
 
-        return redirect()->route('tickets.index')
-            ->with('success', 'Ticket deleted successfully');
+        return redirect()->route('tickets.index')->with('success', 'Ticket deleted successfully');
     }
+
+
+
+    
+
 }
