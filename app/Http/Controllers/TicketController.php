@@ -12,7 +12,7 @@ class TicketController extends Controller
     {
         $tickets = Ticket::paginate();
 
-        return view('ticket.index', compact('tickets' ,'id'))
+        return view('ticket.index', compact('tickets' ))
             ->with('i', (request()->input('page', 1) - 1) * $tickets->perPage());
     }
 

@@ -17,7 +17,7 @@ class Create extends Component
         return view('livewire.customer.create');
     }
 
-    public function registerCustomer()
+   public function registerCustomer()
     {
 
 
@@ -32,11 +32,13 @@ class Create extends Component
             
         ]);
 
-        $this->emit('clienteGuardado');
+       //$this->emit('clienteGuardado');
 
-
-        return redirect()->route('tickets.index')->with('success', 'Ticket created successfully.');
+        //return view('tickets.index');
+        return redirect()->route('tickets.create')->with('success', 'Ticket created successfully.');
     }
+
+
 
     public function resetInput()
     {
@@ -77,5 +79,7 @@ class Create extends Component
         } elseif ($this->customer_document_type == 'RUC') {
             // Procesamiento para RUC, si es necesario
         }
+        //return redirect()->route('tickets.create')->with('success', 'Ticket created successfully.');
     }
+    
 }

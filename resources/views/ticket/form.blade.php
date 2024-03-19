@@ -1,7 +1,7 @@
 <div class="box box-info padding-1">
     <div class="form-group col-md-6">
         <livewire:customer.create :key="$refreshComponent" />
-        <button type="button" class="btn btn-success" id="guardarCliente">Guardar Cliente</button>
+        <button type="button" class="btn btn-success" id="registerCustomer">Guardar Cliente</button>
     </div>
 
     <div class="box-body">
