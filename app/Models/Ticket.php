@@ -34,7 +34,8 @@ class Ticket extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','price','quantity_available'];
+    protected $fillable = ['name','price','quantity_available' ,
+     'customer_document_type', 'customer_document_number', 'customer_full_name'];
 
 
 

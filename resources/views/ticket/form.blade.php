@@ -2,10 +2,7 @@
     <div class="box-body">
         <livewire:customer.create :key="$refreshComponent" />
        
-
-       
-
-
+            
         <div class="form-group col-md-2">
             {{ Form::label('price') }}
             {{ Form::text('price', $ticket->price, ['class' => 'form-control' . ($errors->has('price') ? ' is-invalid' : ''), 'placeholder' => 'Price']) }}

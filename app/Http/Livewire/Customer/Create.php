@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Customer;
 
+use App\Models\api_customer;
+use App\Models\ApiCustomer;
 use App\Models\Ticket;
 use Livewire\Component;
 use Illuminate\Support\Facades\Http;
@@ -18,30 +20,32 @@ class Create extends Component
     public function registerCustomer()
     {
         $this->validate([
-            'customer_document_type' => 'required',
-            'customer_document_number' => 'required',
-            'customer_full_name' => 'required',
+            'price' => 'required|numeric',
+            'quantity_available' => 'required|integer',
         ]);
 
-        // Dividir el nombre completo en nombres, apellido paterno y apellido materno
-        $names = explode(' ', $this->customer_full_name);
-        $first_name = $names[0]; // Primer nombre
-        $last_name1 = $names[1]; // Apellido paterno
-        $last_name2 = $names[2] ?? ''; // Apellido materno, si existe
+        // Obtener los datos del cliente de la API
+        $customerData = $this->searchCustomer();
 
-        $customer = Ticket::create([
+        // Crear un nuevo cliente en la tabla api_customers
+        $apiCustomer = api_customer::create([
             'customer_document_type' => $this->customer_document_type,
             'customer_document_number' => $this->customer_document_number,
-            'first_name' => $first_name,
-            'last_name1' => $last_name1,
-            'last_name2' => $last_name2,
+            'customer_full_name' => $this->customer_full_name,
         ]);
 
-        $this->resetInput();
-        $this->emit('customerCreated', $customer);
-        $this->emit('clientRegistered', $customer->customer_full_name);
-    }
+        // Crear un nuevo ticket con los datos recibidos
+        $ticket = Ticket::create([
+            'price' => $this->price,
+            'quantity_available' => $this->quantity_available,
+            // Asignar los datos del cliente al ticket
+            'customer_document_type' => $this->customer_document_type,
+            'customer_document_number' => $this->customer_document_number,
+            'customer_full_name' => $this->customer_full_name,
+        ]);
 
+        return redirect()->route('tickets.index')->with('success', 'Ticket created successfully.');
+    }
 
     public function resetInput()
     {
@@ -52,36 +56,35 @@ class Create extends Component
 
     public function searchCustomer()
     {
-        $this->validate([
-            'customer_document_type' => 'required',
-            'customer_document_number' => 'required',
-            
-        ]);
 
+    
         $token = config('services.apisunat.token');
         $urldni = config('services.apisunat.urldni');
         $urlruc = config('services.apisunat.urlruc');
-
+    
         if ($this->customer_document_type == 'DNI') {
             $response = Http::withHeaders([
                 'Referer' => 'https://apis.net.pe/consulta-dni-api',
                 'Authorization' => 'Bearer ' . $token,
             ])->get($urldni . $this->customer_document_number);
+    
+            $customerData = $response->json();
+
+            if (isset($customerData['nombres'])) {
+                $this->customer_full_name = trim($customerData['nombres'] . ' ' . $customerData['apellidoPaterno'] . ' ' . $customerData['apellidoMaterno']);
+
+                // Almacena los datos del cliente consultado por la API
+                api_customer::create([
+                    'customer_document_type' => $this->customer_document_type,
+                    'customer_document_number' => $this->customer_document_number,
+                    'customer_full_name' => $this->customer_full_name,
+                ]);
+            } else {
+                // Manejar el caso en el que 'customer_full_name' no está presente en la respuesta de la API
+                $this->customer_full_name = 'Nombre no disponible';
+            }
         } elseif ($this->customer_document_type == 'RUC') {
-            $response = Http::withHeaders([
-                'Referer' => 'http://apis.net.pe/api-ruc',
-                'Authorization' => 'Bearer ' . $token,
-            ])->get($urlruc . $this->customer_document_number);
+            // Procesamiento para RUC, si es necesario
         }
-
-        $persona = $response->json();
-
-        // Obtener los nombres de la persona
-        $nombres = $persona['nombres'] ?? '';
-        $apellidoPaterno = $persona['apellidoPaterno'] ?? '';
-        $apellidoMaterno = $persona['apellidoMaterno'] ?? '';
-
-        // Asignar los nombres a la variable $customer_full_name
-        $this->customer_full_name = trim($nombres . ' ' . $apellidoPaterno . ' ' . $apellidoMaterno);
     }
 }
