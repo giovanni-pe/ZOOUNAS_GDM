@@ -9,10 +9,11 @@
                     <div class="d-flex align-items-center pt-4 animated slideInDown">
                         <a href="" class="btn btn-primary py-sm-3 px-3 px-sm-5 me-5">Leer Más</a>
                         <button type="button" class="btn-play" data-bs-toggle="modal"
-                            data-src="https://www.youtube.com/embed/tLGDzwza2Ig?si=3TJ4L6XCwKPj0ZdQ" data-bs-target="#videoModal">
+                            data-src="https://www.youtube.com/embed/o5F8ZKX_7Ew?si=5tby9nTZ1MmJXY-i" data-bs-target="#videoModal">
                             <span></span>
                         </button>
-                        <h6 class="text-white m-0 ms-4 d-none d-sm-block">Ver Video</h6>
+
+                       <h6 class="text-white m-0 ms-4 d-none d-sm-block">Ver Video</h6>
                     </div>
                 </div>
             </div>
@@ -62,7 +63,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <p><span class="text-primary me-2">#</span>Bienvenido a ZOOUNAS</p>
-                    <h1 class="display-5 mb-4">¡Por qué deberías visitar el Parque <span
+                    <h1 class="display-5 mb-4">¡Por qué deberías visitar el <span
                             class="text-primary">ZOOUNAS</span>!</h1>
                     <p class="mb-4">Stet no et lorem dolor et diam, amet duo ut dolore vero eos. No stet est diam
                         rebum amet diam ipsum. Clita clita labore, dolor duo nonumy clita sit at, sed sit sanctus dolor
@@ -117,77 +118,8 @@
     <!-- Facts End -->
 
 
-    <!-- Service Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <div class="col-lg-6">
-                    <p><span class="text-primary me-2">#</span>Nuestros Servicios</p>
-                    <h1 class="display-5 mb-0">Servicios Especiales Para los Visitantes de <span
-                            class="text-primary">ZOOUNAS</span></h1>
-                </div>
-                <div class="col-lg-6">
-                    <div class="bg-primary h-100 d-flex align-items-center py-4 px-4 px-sm-5">
-                        <i class="fa fa-3x fa-mobile-alt text-white"></i>
-                        <div class="ms-4">
-                            <p class="text-white mb-0">Llama para más información</p>
-                            <h2 class="text-white mb-0">+012 345 6789</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
 
-
-    <div class="row gy-5 gx-4">
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-            <img class="img-fluid mb-3" src="img/icon/icon-2.png" alt="Icono">
-            <h5 class="mb-3">Estacionamiento de Autos</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-            <img class="img-fluid mb-3" src="img/icon/icon-3.png" alt="Icono">
-            <h5 class="mb-3">Fotos de Animales</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-            <img class="img-fluid mb-3" src="img/icon/icon-4.png" alt="Icono">
-            <h5 class="mb-3">Servicios de Guía</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-            <img class="img-fluid mb-3" src="img/icon/icon-5.png" alt="Icono">
-            <h5 class="mb-3">Comida y Bebidas</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-            <img class="img-fluid mb-3" src="img/icon/icon-6.png" alt="Icono">
-            <h5 class="mb-3">Compras en el Zoológico</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-            <img class="img-fluid mb-3" src="img/icon/icon-7.png" alt="Icono">
-            <h5 class="mb-3">Wi-Fi de Alta Velocidad Gratis</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-            <img class="img-fluid mb-3" src="img/icon/icon-8.png" alt="Icono">
-            <h5 class="mb-3">Área de Juegos</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
-        </div>
-        <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-            <img class="img-fluid mb-3" src="img/icon/icon-9.png" alt="Icono">
-            <h5 class="mb-3">Casa de Descanso</h5>
-            <span>Erat ipsum justo amet duo et elitr dolor, est duo duo eos lorem sed diam stet diam sed stet.</span>
-        </div>
-    </div>
-    </div>
-    </div>
-    <!-- Fin de Servicios -->
-
-
+    
     <!-- Inicio de Animales -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -416,40 +348,31 @@
     <!-- Fin de Membresía -->
 
 
-    <!-- Testimonios -->
+    <!-- Testimonial Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <h1 class="display-5 text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">¡Nuestros Clientes Opinan!</h1>
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-1.jpg"
-                        style="width: 100px; height: 100px;">
+                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="{{ asset('img/testimonial-1.jpg') }}" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
-                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.</p>
+                        <p>¡ZooUNAS ofreció una experiencia increíble! Me encantó la variedad de animales y el ambiente natural.</p>
                         <h5 class="mb-1">Nombre del Cliente</h5>
                         <span class="fst-italic">Profesión</span>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-2.jpg"
-                        style="width: 100px; height: 100px;">
+                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="{{ asset('img/testimonial-2.jpg') }}" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
-                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.</p>
+                        <p>¡Una visita a ZooUNAS es imprescindible para cualquier amante de la naturaleza! Lo recomiendo encarecidamente.</p>
                         <h5 class="mb-1">Nombre del Cliente</h5>
                         <span class="fst-italic">Profesión</span>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="img/testimonial-3.jpg"
-                        style="width: 100px; height: 100px;">
+                    <img class="img-fluid rounded-circle border border-2 p-2 mx-auto mb-4" src="{{ asset('img/testimonial-2.jpg') }}" style="width: 100px; height: 100px;">
                     <div class="testimonial-text rounded text-center p-4">
-                        <p>Clita clita tempor justo dolor ipsum amet kasd amet duo justo duo duo labore sed sed. Magna
-                            ut diam sit et amet stet eos sed clita erat magna elitr erat sit sit erat at rebum justo sea
-                            clita.</p>
+                        <p>¡Gracias a ZooUNAS por una experiencia maravillosa! Aprendí mucho sobre la vida salvaje mientras me divertía.</p>
                         <h5 class="mb-1">Nombre del Cliente</h5>
                         <span class="fst-italic">Profesión</span>
                     </div>
@@ -457,6 +380,6 @@
             </div>
         </div>
     </div>
-    <!-- Fin de Testimonios -->
-
+    <!-- Testimonial End -->
+        
 @endsection 

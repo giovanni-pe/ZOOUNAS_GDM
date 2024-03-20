@@ -44,9 +44,11 @@ class AnimalController extends Controller
     public function store(Request $request)
     {
         request()->validate(Animal::$rules);
-
+        
         $animal = Animal::create($request->all());
-
+        if ($request->hasFile('foto')) {
+            $animal->foto = $request->file('foto')->store('fotografias_animals', 'public');
+         }
         return redirect()->route('animals.index')
             ->with('success', 'Animal created successfully.');
     }

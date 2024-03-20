@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagrama de Gantt - Proyecto ZooUNAS</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Estilos adicionales */
+    .task-bar {
+      height: 30px;
+      text-align: center;
+      padding-top: 5px;
+    }
+    .task {
+      height: 30px;
+      border: 1px solid #ccc;
+    }
+    .planned { background-color: #007bff; }
+    .actual { background-color: #28a745; }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Diagrama de Gantt - Proyecto ZooUNAS</h2>
+    <table class="table table-bordered mt-3">
+      <thead>
+        <tr>
+          <th></th>
+          <th colspan="7">Semana 1</th>
+          <th colspan="7">Semana 2</th>
+          <th colspan="7">Semana 3</th>
+          <th colspan="7">Semana 4</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th>05/02 - 11/02</th>
+          <th>12/02 - 18/02</th>
+          <th>19/02 - 25/02</th>
+          <th>26/02 - 03/03</th>
+          <th>04/03 - 10/03</th>
+          <th>11/03 - 17/03</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Definición del Alcance</th>
+          <td colspan="3" class="task planned"></td>
+          <td colspan="2" class="task planned"></td>
+          <td class="task planned"></td>
+          <td colspan="7" class="task"></td>
+        </tr>
+        <tr>
+          <th>Investigación Preliminar</th>
+          <td colspan="3" class="task planned"></td>
+          <td colspan="1" class="task planned"></td>
+          <td class="task planned"></td>
+          <td colspan="7" class="task"></td>
+        </tr>
+        <tr>
+          <th>Diseño de la Metodología</th>
+          <td colspan="3" class="task"></td>
+          <td colspan="3" class="task planned"></td>
+          <td class="task"></td>
+          <td colspan="7" class="task"></td>
+        </tr>
+        <tr>
+          <th>Desarrollo del Sistema</th>
+          <td colspan="6" class="task"></td>
+          <td colspan="12" class="task planned"></td>
+             <td colspan="2" class="task planned"></td>
+
+        
+        </tr>
+        <tr>
+          <th>Integración y Pruebas Finales</th>
+
+          <td colspan="15" class="task"></td>
+          <td colspan="2" class="task planned"></td>
+          <td colspan="2" class="task planned"></td>
+
+        </tr>
+        
+        <tr>
+          <th>Despliegue del Sistema</th>
+          <td colspan="13" class="task"></td>
+          <td colspan="4" class="task"></td>
+          <td colspan="3" class="task planned"></td>
+          <td colspan="7" class="task"></td>
+        </tr>
+        <tr>
+          <th>Evaluación de la Usabilidad</th>
+          <td colspan="7" class="task"></td>
+          <td colspan="10" class="task"></td>
+          <td colspan="4" class="task planned"></td>
+          <td colspan="7" class="task"></td>
+        </tr>
+        <tr>
+          <th>Documentación Final</th>
+          <td colspan="7" class="task"></td>
+          <td colspan="13" class="task"></td>
+          <td colspan="4" class="task planned"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

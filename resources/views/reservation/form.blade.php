@@ -3,7 +3,7 @@
         
         <div class="form-group">
             {{ Form::label('visitor_id') }}
-            {{ Form::text('visitor_id', $reservation->visitor_id, ['class' => 'form-control' . ($errors->has('visitor_id') ? ' is-invalid' : ''), 'placeholder' => 'Visitor Id']) }}
+            {{ Form::text('visitor_id', $reservation->visitor_id, ['class' => 'form-control' . ($errors->has('visitor_id') ? ' is-invalid' : ''), 'placeholder' => 'Visitor Id' ]) }}
             {!! $errors->first('visitor_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('template_title')
     {{ $reservation->name ?? "{{ __('Show') Reservation" }}

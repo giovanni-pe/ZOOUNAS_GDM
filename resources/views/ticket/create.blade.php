@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.zoofrontend')
 
 @section('template_title')
     {{ __('Create') }} Ticket
@@ -16,6 +16,8 @@
                         <span class="card-title">{{ __('Create') }} Ticket</span>
                     </div>
                     <div class="card-body">
+
+                        
                         <form method="POST" action="{{ route('tickets.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 

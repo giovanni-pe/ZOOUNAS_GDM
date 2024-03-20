@@ -13,6 +13,7 @@ class CreateAnimalsTable extends Migration
             $table->string('species');
             $table->date('birth_date');
             $table->unsignedBigInteger('habitat_id');
+            $table->string('foto')->nullable();
             $table->timestamps();
 
             $table->foreign('habitat_id')->references('id')->on('habitats')->onDelete('cascade');

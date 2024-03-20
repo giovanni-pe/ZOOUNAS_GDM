@@ -39,7 +39,7 @@ class Animal extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','species','birth_date','habitat_id'];
+    protected $fillable = ['name','species','foto','birth_date','habitat_id'];
 
 
     /**

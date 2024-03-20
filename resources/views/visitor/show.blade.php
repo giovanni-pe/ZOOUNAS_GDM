@@ -1,4 +1,5 @@
-@extends('layouts.app')
+@extends('layouts.admin')
+
 
 @section('template_title')
     {{ $visitor->name ?? "{{ __('Show') Visitor" }}

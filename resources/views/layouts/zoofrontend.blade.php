@@ -73,7 +73,13 @@
                     <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i
                             class="fab fa-instagram"></i></a>
                 </div>
+                
             </div>
+            
+
+
+
+
         </div>
     </div>
     <!-- Topbar End -->
@@ -105,7 +111,7 @@
                 </div>
                 <a href="{{ url('pages/contacts') }}" class="nav-item nav-link">Contacto</a>
             </div>
-            <a href="" class="btn btn-primary">Comprar Entradas<i class="fa fa-arrow-right ms-3"></i></a>
+            <a href="{{ url('pages/reservas') }}" class="btn btn-primary">Hacer reservaciones<i class="fa fa-arrow-right ms-3"></i></a>
         </div>
     </nav>
     <!-- Navbar End -->

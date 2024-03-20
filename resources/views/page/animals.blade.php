@@ -1,4 +1,5 @@
 @extends('layouts.zoofrontend')
+
 @section('content')
 
 
@@ -9,7 +10,7 @@
                 <div class="col-lg-6">
                     <p><span class="text-primary me-2">#</span>Nuestros Animales</p>
                     <h1 class="display-5 mb-0">Veamos Nuestros <span class="text-primary">Animales Adorables</span> del
-                        ZooUNAS</h1>
+                        Zoounas</h1>
                 </div>
                 <div class="col-lg-6 text-lg-end">
                     <a class="btn btn-primary py-3 px-5" href="">Explorar Más Animales</a>
@@ -28,7 +29,7 @@
                                                 <img class="img-fluid" src="{{ url('img/animal-md-1.jpg') }}" alt="">
                                                 <div class="animal-text p-4">
                                                     <p class="text-white small text-uppercase mb-0">Animal</p>
-                                                    <h5 class="text-white mb-0">Elephant</h5>
+                                                    <h5 class="text-white mb-0">Venado</h5>
                                                 </div>
                                             </div>
                                         </a>
@@ -39,7 +40,7 @@
                                                 <img class="img-fluid" src="{{ url('img/animal-lg-1.jpg') }}" alt="">
                                                 <div class="animal-text p-4">
                                                     <p class="text-white small text-uppercase mb-0">Animal</p>
-                                                    <h5 class="text-white mb-0">Elephant</h5>
+                                                    <h5 class="text-white mb-0"> Montes</h5>
                                                 </div>
                                             </div>
                                         </a>
@@ -54,7 +55,7 @@
                                                 <img class="img-fluid" src="{{ url('img/animal-lg-2.jpg') }}" alt="">
                                                 <div class="animal-text p-4">
                                                     <p class="text-white small text-uppercase mb-0">Animal</p>
-                                                    <h5 class="text-white mb-0">Elephant</h5>
+                                                    <h5 class="text-white mb-0">Gato montes</h5>
                                                 </div>
                                             </div>
                                         </a>
@@ -65,7 +66,7 @@
                                                 <img class="img-fluid" src="{{ url('img/animal-md-2.jpg') }}" alt="">
                                                 <div class="animal-text p-4">
                                                     <p class="text-white small text-uppercase mb-0">Animal</p>
-                                                    <h5 class="text-white mb-0">Elephant</h5>
+                                                    <h5 class="text-white mb-0">Cebra</h5>
                                                 </div>
                                             </div>
                                         </a>
@@ -80,7 +81,7 @@
                                                 <img class="img-fluid" src="{{ url('img/animal-md-3.jpg') }}" alt="">
                                                 <div class="animal-text p-4">
                                                     <p class="text-white small text-uppercase mb-0">Animal</p>
-                                                    <h5 class="text-white mb-0">Elephant</h5>
+                                                    <h5 class="text-white mb-0">Elefante</h5>
                                                 </div>
                                             </div>
                                         </a>
@@ -91,7 +92,7 @@
                                                 <img class="img-fluid" src="{{ url('img/animal-lg-3.jpg') }}" alt="">
                                                 <div class="animal-text p-4">
                                                     <p class="text-white small text-uppercase mb-0">Animal</p>
-                                                    <h5 class="text-white mb-0">Elephant</h5>
+                                                    <h5 class="text-white mb-0">jirafa</h5>
                                                 </div>
                                             </div>
                                         </a>
@@ -99,6 +100,7 @@
                                 </div>
                             </div>
                         </div>
+                       
 
             </div>
         </div>

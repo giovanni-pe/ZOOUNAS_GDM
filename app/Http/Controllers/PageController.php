@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Animal;
 use App\Models\Page;
 use Illuminate\Http\Request;
 
@@ -25,8 +26,11 @@ class PageController extends Controller
 
 
     public function animals(){
-        return view('page.animals');
+        $animals = Animal::latest('id')->paginate(20);
+    
+        return view('page.animals', compact('animals'));
     }
+    
     public function sponsors(){
         return view('page.sponsors');
     }
@@ -39,6 +43,9 @@ class PageController extends Controller
 
     public function contacts(){
        return view('page.contacts');
+    }
+    public function reservas(){
+        return view('page.reservas');
     }
     
 }

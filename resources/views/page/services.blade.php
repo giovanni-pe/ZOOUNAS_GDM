@@ -25,7 +25,7 @@
             <div class="row g-5 mb-5 wow fadeInUp" data-wow-delay="0.1s">
                 <div class="col-lg-6">
                     <p><span class="text-primary me-2">#</span>Nuestros Servicios</p>
-                    <h1 class="display-5 mb-0">Servicios Especiales Para <span class="text-primary">Visitantes de Zoofari</span></h1>
+                    <h1 class="display-5 mb-0">Servicios Especiales Para <span class="text-primary">Visitantes </span></h1>
                 </div>
                 <div class="col-lg-6">
                     <div class="bg-primary h-100 d-flex align-items-center py-4 px-4 px-sm-5">

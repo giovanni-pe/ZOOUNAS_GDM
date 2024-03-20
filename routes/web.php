@@ -33,15 +33,18 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\PaymentController;
 
-Route::resource('habitats', HabitatController::class);
-Route::resource('animals', AnimalController::class);
-Route::resource('employees', EmployeeController::class);
-Route::resource('visitors', VisitorController::class);
-Route::resource('sponsors', SponsorController::class);
-Route::resource('reservations', ReservationController::class);
-Route::resource('events', EventController::class);
-Route::resource('tickets', TicketController::class);
-Route::resource('payments', PaymentController::class);
+Route::prefix('intranet')->middleware(['auth'])->group(function () {
+    Route::resource('habitats', HabitatController::class);
+    Route::resource('animals', AnimalController::class);
+    Route::resource('employees', EmployeeController::class);
+    Route::resource('visitors', VisitorController::class);
+    Route::resource('sponsors', SponsorController::class);
+    Route::resource('reservations', ReservationController::class);
+    Route::resource('events', EventController::class);
+    Route::resource('tickets', TicketController::class);
+    Route::resource('payments', PaymentController::class);
+});
+
 
 Route::get('pages/about',[PageController::class, 'about']);
 Route::get('pages/services',[PageController::class, 'services']);
@@ -50,3 +53,4 @@ route::get('pages/sponsors',[ PageController::class, 'sponsors']);
 Route::get('pages/times',[ PageController::class,"times"]);
 Route::get('pages/testimonials',[PageController::class, 'testimonials']);
 Route::get('pages/contacts',[PageController::class,'contacts']);
+Route::get('pages/reservas',[PageController::class,'reservas']);
